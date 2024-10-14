@@ -45,70 +45,85 @@
       </div>
     </section>
 
-    <!-- 3D Model Section -->
-    <section id="3d-model" class="two">
-        <div class="container">
-          <header>
-            <h3>Interactive 3D Model</h3>
-          </header>
-          <div id="3d-viewer" style="width: 100%; height: 400px;"></div>
-          <script>
-            var scene, camera, renderer, controls;
-            var model;
-    
-            function init() {
-              scene = new THREE.Scene();
-              camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-              renderer = new THREE.WebGLRenderer({ antialias: true });
-              renderer.setSize(window.innerWidth, 400);
-              document.getElementById('3d-viewer').appendChild(renderer.domElement);
-    
-              controls = new THREE.OrbitControls(camera, renderer.domElement);
-              controls.enableDamping = true;
-              controls.dampingFactor = 0.25;
-              controls.enableZoom = true;
-    
-              var light = new THREE.DirectionalLight(0xffffff, 1);
-              light.position.set(1, 1, 1).normalize();
-              scene.add(light);
-    
-              var ambientLight = new THREE.AmbientLight(0x404040);
-              scene.add(ambientLight);
-    
-              camera.position.z = 5;
-    
-              var loader = new THREE.STLLoader();
-              loader.load('../models/quasi_direct_drive.stl', function (geometry) {
-                model = new THREE.Mesh(geometry, material);
-                model.scale.set(0.1, 0.1, 0.1);
-                model.position.set(0, -0.5, 0);
-                model.rotation.set(-Math.PI / 2, 0, 0);
-                scene.add(model);
-              });
-    
-              window.addEventListener('resize', onWindowResize, false);
-            }
-    
-            function onWindowResize() {
-              camera.aspect = window.innerWidth / 400;
-              camera.updateProjectionMatrix();
-              renderer.setSize(window.innerWidth, 400);
-            }
-    
-            function animate() {
-              requestAnimationFrame(animate);
-              controls.update();
-              renderer.render(scene, camera);
-            }
-    
-            init();
-            animate();
-          </script>
+     <!-- Large Image Section -->
+     <section id="large-image" class="two">
+      <div class="container">
+        <header>
+          <h3>Interface Overview</h3>
+        </header>
+        <div class="image-container">
+          <span class="image fit"><img src="../images/haptic_interface2.jpg" alt="Quasi Direct Drive Gripper" /></span>
+          <p class="caption">Figure 1: The Linear Haptic Interface, the face plate can be conifgured to behave like a mass-spring-damper system with configurable parameters.</p>
         </div>
-      </section>
+      </div>
+    </section>
+
+    <!-- 3D Model Section -->
+    <section id="3d-model" class="three">
+      <div class="container">
+        <header>
+          <h3>Interactive 3D Model (Coming Soon!)</h3>
+          <!--
+        </header>
+        <div id="3d-viewer" style="width: 100%; height: 400px;"></div>
+        <script>
+          var scene, camera, renderer, controls;
+          var model;
+  
+          function init() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, 400);
+            document.getElementById('3d-viewer').appendChild(renderer.domElement);
+  
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.25;
+            controls.enableZoom = true;
+  
+            // Lights
+            var light = new THREE.DirectionalLight(0xffffff, 1);
+            light.position.set(1, 1, 1).normalize();
+            scene.add(light);
+  
+            var ambientLight = new THREE.AmbientLight(0xffffff, 1);
+            scene.add(ambientLight);
+  
+            camera.position.set(0, 2, 5);
+  
+            // GLTF Loader for the QDD Gripper
+            var loader = new THREE.GLTFLoader();
+            loader.load('../models/QDD_Gripper_GLTF.gltf', function(gltf) {
+              model = gltf.scene;
+              model.scale.set(0.5, 0.5, 0.5);  // Adjust scale as needed
+              scene.add(model);
+            });
+  
+            window.addEventListener('resize', onWindowResize, false);
+          }
+  
+          function onWindowResize() {
+            camera.aspect = window.innerWidth / 400;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, 400);
+          }
+  
+          function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+          }
+  
+          init();
+          animate();
+        </script>
+      -->
+      </div>
+    </section>
 
     <!-- Project Description Section -->
-    <section id="description" class="three">
+    <section id="description" class="four">
       <div class="container">
         <header>
           <h3>Project Description</h3>
@@ -118,7 +133,7 @@
     </section>
 
     <!-- Images with Captions -->
-    <section id="images" class="four">
+    <section id="images" class="five">
       <div class="container">
         <header>
           <h3>Images</h3>
@@ -136,8 +151,27 @@
       </div>
     </section>
 
+    <!-- Project Specific Skills Section-->
+    <section id="skills" class="six">
+      <div class="container">
+        <header>
+          <h3>Project Specific Skills</h3>
+        </header>
+        <ul>
+          <li>Dynamic system design</li>
+          <li>2nd order homogenous systems of differential equations</li>
+          <li>Impedance/Admittance control</li>
+          <li>Model Reference Addaptive Control</li>
+          <li>Microcontroller programming (STM32F401RE)</li>
+          <li>Sensor integration (Quatrature encoder, Load Cell, HX711)</li>
+          <li>Electronics Design</li>
+          <li>DC Motor Control</li>
+        </ul>
+      </div>
+    </section>
+
     <!-- Embedded Video Section -->
-    <section id="video" class="five">
+    <section id="video" class="seven">
       <div class="container">
         <header>
           <h3>Demonstration Video</h3>
