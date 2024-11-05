@@ -50,8 +50,8 @@
           <h3>Gripper Overview</h3>
         </header>
         <div class="image-container">
-          <span class="image fit"><img src="../images/Gripper1.jpg" alt="Quasi Direct Drive Gripper" /></span>
-          <p class="caption">Figure 1: The Quasi Direct Drive Gripper, showcasing its compact design and precision components.</p>
+          <span class="image fit"><img src="../images/gripper.jpg" alt="Quasi Direct Drive Gripper" /></span>
+          <p class="caption">Figure 1: The Quasi Direct Drive Gripper, designed to be lower cost and more dexterous than comparable products.</p>
         </div>
       </div>
     </section>
@@ -129,7 +129,13 @@
         <p>The gripper is designed to reduce the gap between robotic intelligence and dexterity. It utilises a quasi-direct drive mechanism, to provide precise torque control and allowing for delicate manipulation of objects. The gripper is designed to be modular and scalable, allowing for the addition of more fingers and the ability to control the grip force and position of each finger independently.<p> 
 
         </p> Along with the gripper, a teleoperation glove with fingertip vibrotactile feedback was created to allow for control of the gripper whilst gauging the contact force at the tips of its end effectors.</p>
-      </div>
+
+        </p> The limiting factor for this gripper was the input modality, a glove with a single potentiometer per finger was used to measure user finger position. Without complex mappings of human finger pose to gripper finger pose, this only allowed control over a single degree of freedom in the teleoperation testing. The gripper's dexterity was impressive in isolated examples but the teleoperation system did not allow for compound movements which the gripper is undoubtedly capable of. A computer vision input for finger pose whilst retaining fingertip vibrotactile feedback is the next modality to investigate.</p>
+      
+        </p> COST:</p>
+        <li>v1.0 = £125.00</li>
+        <li> v2.0 = £83.00</li>
+    </div>
     </section>
 
     <!-- Images with Captions -->
@@ -146,6 +152,10 @@
           <div class="col-6 col-12-mobile">
             <span class="image fit"><img src="../images/glove.jpg" alt="Gripper in Action" /></span>
             <p>Figure 2: Teleoperation glove with fingertip vibrotactile feedback.</p>
+          </div>
+          <div class="col-12 col-12-mobile">
+            <span class="image fit"><img src="../images/systemDiagram.png" alt="System Diagram" /></span>
+            <p>Figure 3: System Architecture.</p>
           </div>
         </div>
       </div>
@@ -165,7 +175,7 @@
           <li>Haptic feedback implementation</li>
           <li>Teleoperation system development</li>
           <li>Force sensing and control</li>
-          <li>Compliant system design for Human-robot interaction</li>
+          <li>Compliant system design for human-robot interaction</li>
         </ul>
       </div>
     </section>
@@ -174,14 +184,17 @@
     <section id="video" class="seven">
       <div class="container">
         <header>
-          <h3>Demonstration Video (Coming Soon!)</h3>
+          <h3>Demonstration Video (Embedded Coming Soon!)</h3>
         </header>
+        <div>
+          <li>See other videos on the channel.</li>
+          <a href="https://www.youtube.com/watch?v=bkZ02nT2CYQ" class="button">YouTube Link</a>
+        </div>
         <div class="video-container">
-          <iframe width="100%" height="400" src="https://youtu.be/0GFElmGC_wQ" frameborder="0" allowfullscreen></iframe>
+          <!-- <iframe width="100%" height="400" src="https://www.youtube.com/embed/your_video_id" frameborder="0" allowfullscreen></iframe> -->
         </div>
       </div>
     </section>
-  </div>
 
   <!-- Footer -->
   <div id="footer">
