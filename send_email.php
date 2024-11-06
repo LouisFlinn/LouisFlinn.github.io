@@ -16,9 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Send email
     if (mail($to, $subject, $body, $headers)) {
-        echo "Thank you for contacting us. We will get back to you shortly.";
+        echo "Thank you for getting in contact :)";
     } else {
-        echo "Oops! Something went wrong, and we couldn't send your message.";
+        echo "Oops! Something went wrong, and your message wasn't sent.";
     }
 } else {
     echo "Form submission failed. Please try again.";
